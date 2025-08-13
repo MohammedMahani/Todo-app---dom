@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.Todo-App {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("https://d1rluokkqqu56n.cloudfront.net/wpapp/uploads/2020/12/19100145/to-do-list-1731x1080.jpeg.webp");
+  background-size: cover;
+  padding: 30px 20px;
+}
+
+.Todo-App .app-title {
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.todo-form {
+  width: 60%;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #f6fafb;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.449);
+}
+
+.name-date {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.name-date input {
+  width: 49%;
+  padding: 15px 10px;
+  border: none;
+  outline: none;
+  border: 1px solid #f0d7cc;
+}
+.name-date input::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.task-details {
+  width: 100%;
+  padding: 15px 10px;
+  border: none;
+  outline: none;
+  border: 1px solid #f0d7cc;
+  min-height: 120px;
+  margin-bottom: 15px;
+}
+.task-details::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+.task-submit {
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: #ebcdc0;
+  transition-duration: 0.3s;
+  border-radius: 2px;
+}
+.task-submit:hover {
+  background-color: #f2e6e0;
+}
+
+.tasks {
+  width: 60%;
+  margin: 20px auto 0 auto;
+}
