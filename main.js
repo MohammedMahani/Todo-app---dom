@@ -5,6 +5,11 @@ const taskSubmit = document.querySelector(".task-submit");
 const tasksDiv = document.querySelector(".tasks");
 let tasks = [];
 
+if (localStorage.getItem("tasks")) {
+  tasks = JSON.parse(localStorage.getItem("tasks"));
+  getTask(tasks);
+}
+
 taskSubmit.addEventListener("click", () => {
   let taskNameValue = taskName.value;
   let taskDateValue = taskDate.value;
@@ -13,7 +18,12 @@ taskSubmit.addEventListener("click", () => {
     alert("All Fields are required !");
   } else {
     addTask(taskNameValue, taskDateValue, taskDetailsValue);
+    saveToLocalStorage();
     getTask(tasks);
+
+    taskName.value = "";
+    taskDate.value = "";
+    taskDetails.value = "";
   }
 });
 
@@ -40,6 +50,7 @@ function createTaskContent(task) {
   remove.textContent = "x";
   remove.addEventListener("click", () => {
     deleteTask(task.id);
+    saveToLocalStorage();
     createMainDiv.remove();
   });
 
@@ -88,6 +99,10 @@ function getTask(tasksArr) {
 
 function deleteTask(id) {
   tasks = tasks.filter((t) => t.id !== id);
+}
+
+function saveToLocalStorage() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 getTask(tasks);
